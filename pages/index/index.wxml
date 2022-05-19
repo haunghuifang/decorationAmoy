@@ -1,0 +1,27 @@
+<view class="container">
+  <!-- banner广告 -->
+  <view style="position: relative;">
+    <swiper wx:if="{{banner_ads.data.length}}" class="banner-swiper-container" circular="true"
+      indicator-dots="{{banner_ads.indicatordots}}" autoplay="{{banner_ads.autoplay}}" current="{{banner_ads.current}}"
+      interval="{{banner_ads.interval}}" indicator-color="#fff" duration="{{banner_ads.duration}}"
+      bindchange='onSlideChangeBanner'>
+      <swiper-item class="vol-banner-swiper-item" catchtap="toAds" data-index="{{index}}" data-id="{{item.id}}"
+        data-type="banner" data-url="{{item.linkUrl}}" wx:for="{{banner_ads.data}}" wx:key="index">
+        <view class="vol-banner-card">
+          <image class="vol-banner-picture" src="{{item.imgUrl}}" mode="scaleToFill"></image>
+        </view>
+      </swiper-item>
+    </swiper>
+    <view class="vol-banner-card" wx:else>
+      <image class="vol-banner-picture" src="https://ruqi-img.ruqimobility.com/pic_image/20210720031746__FDLK58I0.png"
+        mode="scaleToFill"></image>
+    </view>
+    <!-- 自定义点-->
+    <view class="dots" wx:if="{{banner_ads.data.length > 1}}">
+      <block wx:for="{{banner_ads.data}}" wx:key="index">
+        <view data-i="{{index}}" class="dot{{index == banner_ads.index ? 'active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+
+</view>
