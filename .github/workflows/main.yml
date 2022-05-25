@@ -40,8 +40,7 @@ jobs:
             echo "##########"
             exit 1
           else
-            echo "$MP_PRIVATE_KEY" > private.wx.key
-          fi
+            echo "$MP_PRIVATE_KEY" > ci-private.key
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
