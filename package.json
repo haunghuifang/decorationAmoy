@@ -9,7 +9,7 @@
     "miniprogram-ci": "^1.8.0"
   },
   "scripts": {
-    "build": "node ./ci.js",
+    "upload": "node ./ci.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
