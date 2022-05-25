@@ -13,7 +13,7 @@ const project = new ci.Project({
   appid: projectConfig.appid,
   type: "miniProgram",
   projectPath: "./",
-  privateKeyPath: "./ci-private.key",
+  privateKeyPath: "./ci.private.key",
   ignores: ["node_modules/**/*", "cloudfunctions/**/*", "ci.js"],
 });
 
