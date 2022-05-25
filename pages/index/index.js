@@ -43,7 +43,6 @@ create({
         type: "bannerAds"
       },
       success: ({ result }) => {
-        debugger
         wx.hideLoading();
         const { code, data } = result;
         if (code === 0) {

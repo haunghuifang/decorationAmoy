@@ -1,6 +1,26 @@
 {
+  "name": "decorationAmoy",
+  "version": "1.0.0",
+  "description": "这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：",
+  "desc": "测试",
+  "robot": 1,
+  "main": "app.js",
+  "dependencies": {
+    "miniprogram-ci": "^1.8.0"
+  },
   "scripts": {
-    "build": "npm run build",
-    "build:test": "npm run build:test"
-  }
+    "build": "node ./ci.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haunghuifang/decorationAmoy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haunghuifang/decorationAmoy/issues"
+  },
+  "homepage": "https://github.com/haunghuifang/decorationAmoy#readme"
 }

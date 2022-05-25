@@ -1,0 +1,12 @@
+project.config.json
+project.private.config.json
+.project.config.json
+.DS_Store
+*/.DS_Store
+assets/.DS_Store
+/.idea
+/node_modules/
+.vscode
+typings
+jsconfig.json
+/cloudfunctions/auth/node_modules
