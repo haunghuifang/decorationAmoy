@@ -20,40 +20,48 @@ const project = new ci.Project({
 /** 上传 */
 async function uploadCloud({ version = "0.0.1", desc = "test", robot = 1}) {
 
-  const result = await ci.cloud.uploadFunction({
-    project,
-    env: "cloud1-2gfspwne6db462df",
-    // version: {
-    //   uploadType: 'package', // 上传方式
-    //   flowRatio: 0, // 流量比例
-    //   cpu: 0.25, // CPU 核心数
-    //   mem: 0.5, // 内存大小
-    //   minNum: 0, // 最小副本数
-    //   maxNum: 1, // 最大副本数
-    //   policyType: 'cpu', // 扩缩容条件
-    //   policyThreshold: 60, // 扩缩容阈值
-    //   containerPort: 80, // 容器监听端口
-    //   serverName: 'server', // 服务名称
-    //   versionRemark: 'ci', // 版本备注
-    //   envParams: '{}', // 环境变量
-    //   buildDir: './cloudfunctions', // 构建目录
-    //   dockerfilePath: './cloudfunctions' // Dockerfile 路径
-    // },
-    // triggersConfig: [{
-
-    // }],
-    name: "auth",
-    path: "./cloudfunctions/auth",
-    remoteNpmInstall: true, // 是否云端安装依赖
-  });
-  console.log(result);
-  // 静态网站
-  const resultStatic = await ci.cloud.uploadStaticStorage({
+  try {
+    const result = await ci.cloud.uploadFunction({
+      project,
+      env: "cloud1-2gfspwne6db462df",
+      // version: {
+      //   uploadType: 'package', // 上传方式
+      //   flowRatio: 0, // 流量比例
+      //   cpu: 0.25, // CPU 核心数
+      //   mem: 0.5, // 内存大小
+      //   minNum: 0, // 最小副本数
+      //   maxNum: 1, // 最大副本数
+      //   policyType: 'cpu', // 扩缩容条件
+      //   policyThreshold: 60, // 扩缩容阈值
+      //   containerPort: 80, // 容器监听端口
+      //   serverName: 'server', // 服务名称
+      //   versionRemark: 'ci', // 版本备注
+      //   envParams: '{}', // 环境变量
+      //   buildDir: './cloudfunctions', // 构建目录
+      //   dockerfilePath: './cloudfunctions' // Dockerfile 路径
+      // },
+      // triggersConfig: [{
+  
+      // }],
+      name: "auth",
+      path: "./cloudfunctions/auth",
+      remoteNpmInstall: true, // 是否云端安装依赖
+    });
+  }catch(err){
+    console.log(err);
+  }
+  try {
+   // 静态网站
+   const resultStatic = await ci.cloud.uploadStaticStorage({
     project,
     env: "cloud1-2gfspwne6db462df",
     path: "./cloudfunctions",
     remotePath: true,
   });
+  }catch(err){
+    console.log(err);
+  }
+  try {
   // 云存储
   const resultStorage = await ci.cloud.uploadStorage({
     project,
@@ -61,8 +69,10 @@ async function uploadCloud({ version = "0.0.1", desc = "test", robot = 1}) {
     path: "./cloudfunctions",
     remotePath: true,
   });
-  console.log(resultStatic, resultStorage);
-
+   }catch(err){
+     console.log(err);
+   }
+  // console.log(resultStatic, resultStorage);
 }
 
 async function uploadCode({version = "0.0.1", desc = "test", robot = 1}) {

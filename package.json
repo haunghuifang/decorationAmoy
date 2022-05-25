@@ -2,7 +2,7 @@
   "name": "decorationAmoy",
   "version": "1.0.0",
   "description": "这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：",
-  "desc": "github自动部署错误捕获",
+  "desc": "github自动部署错误捕获添加",
   "robot": 1,
   "main": "app.js",
   "dependencies": {
