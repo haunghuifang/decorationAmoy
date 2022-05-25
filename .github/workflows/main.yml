@@ -46,7 +46,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           npm install
-          npm run upload
+          npm run build
     # - name: set PRIVATE_KEY
     # - uses: actions/checkout@v2
     #   env:
