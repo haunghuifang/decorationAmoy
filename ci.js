@@ -14,7 +14,7 @@ const project = new ci.Project({
   type: "miniProgram",
   projectPath: "./",
   privateKeyPath: "./ci-private.key",
-  ignores: ["node_modules/**/*", "cloudfunctions/**/*", "ci.js", "components/**/*"],
+  ignores: ["node_modules/**/*", "cloudfunctions/**/*", "ci.js"],
 });
 
 /** 上传 */
@@ -71,13 +71,15 @@ async function uploadCode({version = "0.0.1", desc = "test", robot = 1}) {
     version,
     desc: desc,
     setting: {
-      es6: true,
+      es7: true,
+      minify: true,
+      autoPrefixWXSS: true
     },
     onProgressUpdate: console.log,
   })
   // console.log(resultUpload);
 }
 
-// uploadCloud({ version, desc, robot });
+uploadCloud({ version, desc, robot });
 uploadCode({ version, desc, robot })
 // ci.proxy('moonshine.com')
