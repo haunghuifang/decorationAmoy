@@ -80,6 +80,10 @@ async function uploadCode({version = "0.0.1", desc = "test", robot = 1}) {
   // console.log(resultUpload);
 }
 
-uploadCloud({ version, desc, robot });
+try {
+  uploadCloud({ version, desc, robot });
+}catch(err){
+  console.log(err)
+}
 uploadCode({ version, desc, robot })
 // ci.proxy('moonshine.com')
