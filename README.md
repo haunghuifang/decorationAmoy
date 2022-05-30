@@ -28,3 +28,7 @@ npm i
 - 3、 属性和函数名后加入空格
 - 4、 每行自动加分号
 - 5、 多属性自动换行等
+
+## 自动化部署
+
+- [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html)

@@ -1,5 +1,5 @@
 import create from '../../store/create';
-import { UPDATE_USERINFO } from '../../constants/event';
+import store from '../../store/store';
 import { goWebUrl } from '../../utils/index';
 
 create({
@@ -18,6 +18,10 @@ create({
   },
   onLoad() {},
   onShow() {
+    if (!store.storeView.login) {
+      this.goLogin();
+    }
+
     this.getAds();
   },
   goLogin() {
