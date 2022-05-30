@@ -1,0 +1,8 @@
+# .eslintignore
+
+*.min.js
+typings
+node_modules
+/node_modules/
+.vscode
+/cloudfunctions/auth/node_modules

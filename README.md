@@ -1,3 +1,10 @@
+## 开发 
+
+- 开发
+
+```javascript
+npm i
+```
 # 云开发 quickstart
 
 这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
@@ -10,3 +17,14 @@
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 
+## 代码规范
+
+项目选用`eslint` + `husky` + `prettier` 做代码检测以及语法提示，避免因工具不统一导致代码提交时有多余的修改。
+
+我们代码主要采用以下规范：
+
+- 1、 项目采用单引号
+- 2、 对象最后的属性不尾随空格
+- 3、 属性和函数名后加入空格
+- 4、 每行自动加分号
+- 5、 多属性自动换行等

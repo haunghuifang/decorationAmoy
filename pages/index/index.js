@@ -1,6 +1,6 @@
-import create from "../../store/create";
-import { UPDATE_USERINFO } from "../../constants/event";
-import { goWebUrl } from "../../utils/index";
+import create from '../../store/create';
+import { UPDATE_USERINFO } from '../../constants/event';
+import { goWebUrl } from '../../utils/index';
 
 create({
   data: {
@@ -18,43 +18,43 @@ create({
   },
   onLoad() {},
   onShow() {
-    this.getAds()
+    this.getAds();
   },
   goLogin() {
     wx.navigateTo({
-      url: "/pages/login/login"
+      url: '/pages/login/login'
     });
   },
   onSlideChangeBanner(event) {
     const postId = event.detail.current;
     this.setData({
-      "banner_ads.index": postId
+      'banner_ads.index': postId
     });
   },
   toAds(e) {
     const { type, id, index, url } = e.currentTarget.dataset;
-    goWebUrl(url)
+    goWebUrl(url);
   },
   getAds() {
     wx.showLoading();
     wx.cloud.callFunction({
-      name: "auth",
+      name: 'auth',
       data: {
-        type: "bannerAds"
+        type: 'bannerAds'
       },
       success: ({ result }) => {
         wx.hideLoading();
         const { code, data } = result;
         if (code === 0) {
           this.setData({
-            ['banner_ads.data']: data
-          })
+            'banner_ads.data': data.res
+          });
         }
       },
       fail: () => {
         wx.showToast({
-          title: "Interface request failed",
-          icon: "none"
+          title: 'Interface request failed',
+          icon: 'none'
         });
       }
     });

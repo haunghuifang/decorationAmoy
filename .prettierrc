@@ -1,0 +1,26 @@
+{
+  "printWidth": 120,
+  "trailingComma": "none",
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": [ "*.js" ],
+      "options": {
+        "singleQuote": true
+      }
+    },
+    {
+      "files": [ "*.wxss" ],
+      "options": {
+        "parser": "css"
+      }
+    },
+    {
+      "files": [ "*.wxs" ],
+      "options": {
+        "singleQuote": true,
+        "parser": "babel"
+      }
+    }
+  ]
+}
