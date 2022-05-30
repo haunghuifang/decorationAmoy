@@ -6,6 +6,6 @@ exports.main = async (event, context) => {
     case "login":
       return await login.main(event, context);
     case "bannerAds":
-       return await bannerAds.main(event, context)
+      return await bannerAds.main(event, context)
   }
 };
