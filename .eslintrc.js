@@ -30,15 +30,20 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
-    'no-debugger': 2,
-    'no-unused-vars': 1,
-    'no-var': 0,
-    'no-param-reassign': 0,
-    'no-irregular-whitespace': 0,
-    'no-useless-catch': 1,
-    'max-params': ['error', 3],
-    'array-callback-return': 1,
+    'prettier/prettier': 'error',
+    'no-console': 0,
     eqeqeq: 0,
-    indent: ['error', 2, { SwitchCase: 1 }]
+    camelcase: 1,
+    'prefer-const': 0,
+    'no-var': 2,
+    'prefer-promise-reject-errors': 0,
+    'node/no-callback-literal': 0,
+    'no-unused-vars': 1,
+    'import/no-absolute-path': 1,
+    'no-case-declarations': 1,
+    'node/handle-callback-err': 1,
+    'prefer-regex-literals': 0,
+    'new-cap': 1,
+    'promise/param-names': 1
   }
 };
