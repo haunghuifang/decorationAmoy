@@ -1,25 +1,7 @@
-Page({
-  data: {
+import create from '../../store/create';
 
-  },
-  onLoad(options) {
-
-  },
-  onReady() {
-
-  },
-  onShow() {
-
-  },
-  onHide() {
-
-  },
-  onUnload() {
-
-  },
-  onShareAppMessage() {
-    return {
-      title: '',
-    };
-  },
+create({
+  data: {},
+  onLoad() {},
+  onShow() {}
 });
