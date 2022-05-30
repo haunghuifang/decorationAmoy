@@ -10,10 +10,7 @@ exports.main = async (event, context) => {
   const {OPENID: openid} = cloud.getWXContext()
 
   try {
-    const { data: res } = await db.collection('bannerAds').where({
-      openid,
-      fulfill: false
-    }).get()
+    const { data: res } = await db.collection('bannerAds').get()
     console.log(res);
     return genderSucData({ res })
   } catch (err) {
